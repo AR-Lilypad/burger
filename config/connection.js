@@ -9,13 +9,6 @@ let connection = mysql.createConnection({
   database: "burgers_db"
 });
 
-const db = require('db')
-db.connect({
-  host: process.env.DB_HOST,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS
-})
-
 // Connect to the database
 connection.connect(function(err) {
   if (err) {
