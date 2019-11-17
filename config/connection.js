@@ -1,6 +1,6 @@
 let mysql = require("mysql");
 
-// Set up our connection information
+// Set up our connection information    how to use the .env???
 let connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
@@ -8,6 +8,13 @@ let connection = mysql.createConnection({
   password: "yourRootPassword",
   database: "burgers_db"
 });
+
+const db = require('db')
+db.connect({
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS
+})
 
 // Connect to the database
 connection.connect(function(err) {

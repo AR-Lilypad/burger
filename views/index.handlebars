@@ -1,0 +1,40 @@
+<h1>Eat-Dat-Burger!</h1>
+
+<h2>Create your own burger and then devour it!</h2>
+<h3>Bet you can't eat just 1!</h3>
+
+
+<ul>
+  {{#each burger}}
+    {{#unless cheesy}}
+      {{> burger/burger-block burger=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>burgers that are cheesy!</h2>
+
+<ul>
+  {{#each burger}}
+    {{#if cheesy}}
+      {{> burger/burger-block burger=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="cheesy">cheesy?</label><br>
+    <input type="radio" name="cheesy" value="1" checked> cheesy!<br>
+    <input type="radio" name="cheesy" value="0"> Awake
+  </div>
+
+  <button type="submit">Add burger</button>
+</form>
