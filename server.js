@@ -6,7 +6,7 @@ const exphbs = require("express-handlebars");
 let app = express();
 
 // code needed to deploy to Heroku
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 //serve static content for the app from the "public" folder - like assets: css, images
 app.use(express.static("public"));
