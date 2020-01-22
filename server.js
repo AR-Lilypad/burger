@@ -2,6 +2,7 @@
 // ===========================================================
 const express = require("express");
 const exphbs = require("express-handlebars");
+let favicon = require("serve-favicon");
 
 let app = express();
 
