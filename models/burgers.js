@@ -2,18 +2,18 @@
 const orm = require("../config/orm.js");
 
 // make object
-const burgers =  { getBurger: function(cb){
-  orm.selectAll("burgers", function(result){cb(result)})
-}
+const burgers = {
+  getBurger: function(cb) {
+    orm.selectAll("burgers", function(result) {
+      cb(result);
+    });
+  }
+};
 
-}
+// Export the database functions for the controller (burgers_controller.js).
+module.exports = burgers;
 
-  // Export the database functions for the controller (burgers_controller.js).
-module.exports = burger;
-
-
-// sequelize is an ORM so won't have to have an ORM 
-
+// sequelize is an ORM so won't have to have an ORM
 
 // selectAll: function(tableInput, colToSearch, valOfCol) {
 //   var queryString = "SELECT * FROM ?? WHERE ?? = ?";

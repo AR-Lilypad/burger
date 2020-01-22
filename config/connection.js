@@ -3,7 +3,7 @@ let mysql = require("mysql");
 // Set up our connection information    how to use the .env???
 let connection = mysql.createConnection({
   host: "localhost",
-  port: 3306,
+  port: process.env.PORT || 3306,
   user: "root",
   password: "yourRootPassword",
   database: "burgers_db"
