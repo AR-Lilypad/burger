@@ -3,29 +3,29 @@ const orm = require("../config/orm.js");
 
 // make object
 const burgers = {
-  getBurger: function(cb) {
-    orm.selectAll("burgers", function(result) {
+ all: function(cb) {
+    orm.all("burgers", function(result) {
       cb(result);
     });
   },
 
   // Add a new burger to the db.
-  insertOne: function(cols, vals, cb) {
-    orm.insertOne("burgers", cols, vals, function(res) {
+  create: function(cols, vals, cb) {
+    orm.create("burgers", cols, vals, function(res) {
       cb(res);
     });
   },
 
   // Change the devoured status to true.
-  updateOne: function(objColVals, condition, cb) {
-    orm.updateOne("burgers", objColVals, condition, function(res) {
+  update: function(objColVals, condition, cb) {
+    orm.update("burgers", objColVals, condition, function(res) {
       cb(res);
     });
   },
 
   // Delete a burger from the db.
-  deleteOne: function(condition, cb) {
-    orm.deleteOne("burgers", condition, function(res) {
+  delete: function(condition, cb) {
+    orm.delete("burgers", condition, function(res) {
       cb(res);
     });
   }

@@ -4,6 +4,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 let favicon = require("serve-favicon");
 
+
 let app = express();
 
 // code needed to deploy to Heroku
@@ -22,6 +23,11 @@ app.set("view engine", "handlebars");
 
 // route dependency
 let routes = require("./controllers/burgers_controller.js");
+app.use(routes);
 
 // port listening code
-app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
+// app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
+
+app.listen(PORT, function() {
+    console.log("Server listening on http://localhost:" + PORT);
+});
