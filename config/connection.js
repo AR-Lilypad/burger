@@ -1,13 +1,19 @@
 let mysql = require("mysql");
 
 // Set up our connection information    how to use the .env???
-let connection = mysql.createConnection({
+let connection;
+
+if(process.env.JAWSDB_URL){
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
   host: "localhost",
   port: process.env.PORT || 3306,
   user: "root",
   password: "yourRootPassword",
   database: "burgers_db"
 });
+}
 
 // Connect to the database
 connection.connect(function(err) {
